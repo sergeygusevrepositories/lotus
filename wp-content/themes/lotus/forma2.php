@@ -27,7 +27,7 @@ get_header(); ?>
                  </div>
                  <div class="forma_label">
                      <div class="forma_label--p">Printed Name of Patient’s <br>Representative (if applicable)</div>
-                     <input type="text" class="forma_input" required style="position: relative;top: -8px;">
+                     <input id="printed_name" type="text" class="forma_input" required style="position: relative;top: -8px;">
                  </div>
              </div>
           </div>
@@ -37,19 +37,19 @@ get_header(); ?>
                <div class="forma_check2--row">
                    <div class="forma_flex">
                        <label class="forma_check forma_check2">
-                           <input type="checkbox">
+                           <input id="parent-chkb" type="checkbox">
                            <div class="forma_check--p">Parent or guardian of unemancipated minor</div>
                        </label>
                        <label class="forma_check forma_check2">
-                           <input type="checkbox">
+                           <input id="executor-chkb" type="checkbox">
                            <div class="forma_check--p">Executor or administrator of decedent's estate</div>
                        </label>
                        <label class="forma_check forma_check2">
-                           <input type="checkbox">
+                           <input id="court-chkb" type="checkbox">
                            <div class="forma_check--p">Court appointed guardian</div>
                        </label>
                        <label class="forma_check forma_check2">
-                           <input type="checkbox">
+                           <input id="power-chkb" type="checkbox">
                            <div class="forma_check--p">Power of Attorney</div>
                        </label>
                    </div>
@@ -84,7 +84,7 @@ get_header(); ?>
            </div>
            <div class="forma_bottom">
                <div class="forma_submit">
-                   <button type="submit" href="#modal2" data-fancybox class="btn">Submit</button>
+                   <button id="submit2" type="submit" href="#modal2" data-fancybox class="btn sgus-submit">Submit</button>
                </div>
            </div>
        </div>

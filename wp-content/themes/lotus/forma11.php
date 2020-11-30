@@ -96,7 +96,7 @@ get_header(); ?>
             </div>
             <div class="forma_bottom">
                 <div class="forma_submit">
-                    <button type="submit" href="#modal2" data-fancybox class="btn">Submit</button>
+                    <button id="submit11" type="submit" href="#modal2" data-fancybox class="btn sgus-submit">Submit</button>
                 </div>
             </div>
         </div>

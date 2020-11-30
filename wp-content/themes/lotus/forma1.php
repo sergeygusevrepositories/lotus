@@ -2,7 +2,18 @@
 /*
 Template Name: Notice of Privacy Practices page
 */
-get_header(); ?>
+get_header();
+
+$array = [
+    "title" => "title",
+    "description" => "description"
+];
+
+$json = json_encode($array);
+
+do_shortcode( sprintf( '[plugin_shortcode data=\'%s\']', $json ) );
+
+?>
 
 <section class="inner-intro" style="background-image: url(<?php bloginfo("template_directory")?>/img/about-intro.jpg);">
     <h1 class="inner-intro_h1 inner-intro_h1--small"><?php the_title();?></h1>
@@ -341,7 +352,7 @@ get_header(); ?>
                 <textarea class="feedback_textarea" placeholder="Text"></textarea>
             </div>
             <div class="feedback_btn">
-                <button type="submit" class="btn">
+                <button id="submit1" type="submit" class="btn sgus-submit">
                     Send Message
                 </button>
             </div>

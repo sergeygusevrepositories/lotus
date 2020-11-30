@@ -75,23 +75,23 @@ get_header(); ?>
             <div class="forma_blue">EMERGENCY CONTACT</div>
             <div class="forma_div">
                 <div class="forma_flex">
-                    <div class="forma_label">
+                    <div class="forma_label sgus-25">
                         <div class="forma_label--p">First Name</div>
                         <input type="text" class="forma_input forma_input__min" required>
                     </div>
-                    <div class="forma_label">
+                    <div class="forma_label sgus-25">
                         <div class="forma_label--p">Last Name</div>
                         <input type="text" class="forma_input forma_input__min" required>
                     </div>
-                    <div class="forma_label">
+                    <div class="forma_label sgus-25">
                         <div class="forma_label--p">Phone</div>
                         <input type="tel" class="forma_input forma_input__min" required>
                     </div>
-                    <div class="forma_label">
+                    <div class="forma_label sgus-25 sgus-last">
                         <div class="forma_label--p">Relationship</div>
                         <input type="text" class="forma_input forma_input__min" required>
                     </div>
-                    <div class="forma_label">
+                    <div class="forma_label sgus-100">
                         <div class="forma_label--p">Do you authorize this person to discuss care or treatment with the office in the case of an emergency?</div>
                         <label class="forma_radio">
                             <div class="forma_radio--item">
@@ -533,7 +533,7 @@ get_header(); ?>
                 </div>
             </div>
             <div class="forma_submit">
-                <button type="submit" href="#modal2" data-fancybox class="btn">Submit</button>
+                <button id="submit3" type="submit" href="#modal2" data-fancybox class="btn sgus-submit">Submit</button>
             </div>
         </div>
     </div>

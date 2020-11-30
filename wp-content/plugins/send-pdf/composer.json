@@ -1,0 +1,6 @@
+{
+    "name": "sergey/send-pdf",
+    "require": {
+        "mpdf/mpdf": "^8.0"
+    }
+}

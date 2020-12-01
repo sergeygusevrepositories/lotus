@@ -8,10 +8,16 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-require_once plugin_dir_path(__DIR__) . 'includes/CreatePDF.php';
-require_once plugin_dir_path(__DIR__) . '/vendor/autoload.php';
+if ($_POST["action"] == "createImgFromCanvas") {
+    require_once plugin_dir_path(__DIR__) . 'includes/CreateSignature.php';
 
-CreatePDF::create(stripcslashes($_POST['html']), $_POST['data']);
+    echo CreateSignature::create($_POST["signature"]);
+} else {
+    require_once plugin_dir_path(__DIR__) . 'includes/CreatePDF.php';
+    require_once plugin_dir_path(__DIR__) . '/vendor/autoload.php';
 
-//echo stripcslashes($_POST['html']);
+    CreatePDF::create(stripcslashes($_POST['html']));
+}
+
+
 

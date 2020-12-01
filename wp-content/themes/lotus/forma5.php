@@ -15,43 +15,43 @@ get_header(); ?>
                 <div class="forma_flex">
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">Patient Name:</div>
-                        <input type="text" class="forma_input forma_input__max" required>
+                        <input id="1-inp" type="text" class="forma_input forma_input__max" required>
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">State:</div>
-                        <input type="text" class="forma_input forma_input__max" required>
+                        <input id="2-inp" type="text" class="forma_input forma_input__max" required>
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">Other Names Used:</div>
-                        <input type="text" class="forma_input forma_input__max">
+                        <input id="3-inp" type="text" class="forma_input forma_input__max">
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">Zip Code:</div>
-                        <input type="number" class="forma_input forma_input__max" required>
+                        <input id="4-inp" type="number" class="forma_input forma_input__max" required>
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">Street: </div>
-                        <input type="text" class="forma_input forma_input__max" required>
+                        <input id="5-inp" type="text" class="forma_input forma_input__max" required>
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">Social Security</div>
-                        <input type="text" class="forma_input forma_input__max" required>
+                        <input id="6-inp" type="text" class="forma_input forma_input__max" required>
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">APT.#: </div>
-                        <input type="text" class="forma_input forma_input__max">
+                        <input id="7-inp" type="text" class="forma_input forma_input__max">
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">Date of Birth: </div>
-                        <input type="date" id="date1" class="forma_input forma_input__max" required>
+                        <input id="8-inp" type="date" id="date1" class="forma_input forma_input__max" required>
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">City/Town:</div>
-                        <input type="text" class="forma_input forma_input__max" required>
+                        <input id="9-inp" type="text" class="forma_input forma_input__max" required>
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">Phone:</div>
-                        <input type="tel" class="forma_input forma_input__max" required>
+                        <input id="10-inp" type="tel" class="forma_input forma_input__max" required>
                     </div>
                 </div>
                 <div class="forma_5">
@@ -61,31 +61,31 @@ get_header(); ?>
                 <div class="forma_flex">
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">Name:</div>
-                        <input type="text" class="forma_input forma_input__max" required>
+                        <input id="11-inp" type="text" class="forma_input forma_input__max" required>
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">State/Zip Code:</div>
-                        <input type="text" class="forma_input forma_input__max">
+                        <input id="12-inp" type="text" class="forma_input forma_input__max">
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">Attention:</div>
-                        <input type="text" class="forma_input forma_input__max">
+                        <input id="13-inp" type="text" class="forma_input forma_input__max">
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">Phone:</div>
-                        <input type="tel" class="forma_input forma_input__max">
+                        <input id="14-inp" type="tel" class="forma_input forma_input__max">
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">Street: </div>
-                        <input type="text" class="forma_input forma_input__max">
+                        <input id="15-inp" type="text" class="forma_input forma_input__max">
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">Fax:</div>
-                        <input type="number" class="forma_input forma_input__max" required>
+                        <input id="16-inp" type="number" class="forma_input forma_input__max" required>
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">City/Town: </div>
-                        <input type="text" class="forma_input forma_input__max">
+                        <input id="17-inp" type="text" class="forma_input forma_input__max">
                     </div>
                 </div>
             </div>
@@ -96,49 +96,49 @@ get_header(); ?>
                     <div class="forma_check2--row">
                         <div class="forma_flex">
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="1-chkb" type="checkbox">
                                 <div class="forma_check--p">Mental Health Diagnosis and Treatment provided by a Psychiatrist; Psychologist; Mental Health Clinical Nurse Specialist; Licensed Social Worker Counseling; all other Licensed Mental Health Providers.</div>
                             </label>
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="2-chkb" type="checkbox">
                                 <div class="forma_check--p">Entire Mental Health Record, excluding Psychotherapy Notes which require a separate authorization </div>
                             </label>
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="3-chkb" type="checkbox">
                                 <div class="forma_check--p">Entire Record (Medical and Mental Health)</div>
                             </label>
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="4-chkb" type="checkbox">
                                 <div class="forma_check--p">Treatment Plans</div>
                             </label>
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="5-chkb" type="checkbox">
                                 <div class="forma_check--p">Discharge Summary</div>
                             </label>
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="6-chkb" type="checkbox">
                                 <div class="forma_check--p">Neuropsych Testing</div>
                             </label>
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="7-chkb" type="checkbox">
                                 <div class="forma_check--p">Transfer Summary</div>
                             </label>
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="8-chkb" type="checkbox">
                                 <div class="forma_check--p">Admission Documentation</div>
                             </label>
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="9-chkb" type="checkbox">
                                 <div class="forma_check--p">Physical Exam</div>
                             </label>
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="10-chkb" type="checkbox">
                                 <div class="forma_check--p">Lab Reports</div>
                             </label>
                         </div>
                         <div class="forma_label">
                             <div class="forma_label--p">Other (please specify) / additional information:</div>
-                            <input type="text" class="forma_input forma_input__max">
+                            <input id="18-inp" type="text" class="forma_input forma_input__max">
                         </div>
                     </div>
                 </div>
@@ -152,11 +152,11 @@ get_header(); ?>
                     <div class="forma_flex">
                         <div class="forma_label forma_label5">
                             <div class="forma_label--p">From:</div>
-                            <input type="text" class="forma_input forma_input__max" required>
+                            <input id="19-inp" type="text" class="forma_input forma_input__max" required>
                         </div>
                         <div class="forma_label forma_label5">
                             <div class="forma_label--p">To:</div>
-                            <input type="text" class="forma_input forma_input__max" required>
+                            <input id="20-inp" type="text" class="forma_input forma_input__max" required>
                         </div>
                     </div>
                 </div>
@@ -166,33 +166,33 @@ get_header(); ?>
                     <div class="forma_b">Please initial to indicate you give permission to release the following information if present in your record: (initial all that apply)</div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">HIV test results (Authorization required for each release request.)</div>
-                        <input type="text" class="forma_input forma_input__initial" required="">
+                        <input id="21-inp" type="text" class="forma_input forma_input__initial" required="">
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Alcohol and Drug Abuse Records Protected by Federal Confidentiality Rules 42 CFR Part 2 Federal rules prohibit any further disclosure of this information unless disclosure is expressly permitted by written authorization of the person to whom it pertains or as otherwise permitted by 42 CFR Part 2.</div>
-                        <input type="text" class="forma_input forma_input__initial" required="">
+                        <input id="22-inp" type="text" class="forma_input forma_input__initial" required="">
                     </div>
                     <div class="forma_b">Purpose of the Release:</div>
                     <div class="forma_check2--row">
                         <div class="forma_flex">
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="11-chkb" type="checkbox">
                                 <div class="forma_check--p">Personal Use</div>
                             </label>
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="12-chkb" type="checkbox">
                                 <div class="forma_check--p">Coordinate care</div>
                             </label>
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="13-chkb" type="checkbox">
                                 <div class="forma_check--p">Referral </div>
                             </label>
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="14-chkb" type="checkbox">
                                 <div class="forma_check--p">Facilitate billing </div>
                             </label>
                             <label class="forma_check forma_check5">
-                                <input type="checkbox">
+                                <input id="15-chkb" type="checkbox">
                                 <div class="forma_check--p">Obtain insurance, financial or other benefits</div>
                             </label>
 
@@ -200,7 +200,7 @@ get_header(); ?>
                     </div>
                     <div class="forma_label">
                         <div class="forma_label--p">Other purpose (please specify):</div>
-                        <input type="text" class="forma_input forma_input__max">
+                        <input id="23-inp" type="text" class="forma_input forma_input__max">
                     </div>
                 </div>
             </div>
@@ -221,7 +221,7 @@ get_header(); ?>
             <div class="forma_mental">
                 <div class="forma_label">
                     <div class="forma_label--p">This authorization will expire (specify a date, time period or an event)</div>
-                    <input type="text" class="forma_input forma_input__max" required="">
+                    <input id="24-inp" type="text" class="forma_input forma_input__max" required="">
                     <div class="forma_label--p">or, if nothing is specified, it will expire one year from date of signing. </div>
                 </div>
                 <div class="forma_label--mt forma_b">Signature / Authorization: </div>
@@ -232,17 +232,17 @@ get_header(); ?>
                     </div>
                     <div class="forma_label">
                         <div class="forma_label--p">Date</div>
-                        <input type="date" id="date2" class="forma_input" required="">
+                        <input id="25-inp" type="date" id="date2" class="forma_input" required="">
                     </div>
                 </div>
                 <div class="forma_label forma_label--mt">
                     <div class="forma_label--p">Print name of signer</div>
-                    <input type="text" class="forma_input forma_input__max" required="">
+                    <input id="26-inp" type="text" class="forma_input forma_input__max" required="">
                 </div>
                 <div class="forma_label--mt forma_b">The following information is needed if signed by a personal representative:</div>
                 <div class="forma_label forma_label--mt">
                     <div class="forma_label--p">Type of authority (e.g., court appointed, custodial parent):</div>
-                    <input type="text" class="forma_input forma_input__max" required="">
+                    <input id="27-inp" type="text" class="forma_input forma_input__max" required="">
                 </div>
             </div>
             <div class="forma_bottom">

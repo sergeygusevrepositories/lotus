@@ -20,7 +20,7 @@ get_header(); ?>
                    </div>
                    <div class="forma_label forma_label--mt">
                        <div class="forma_label--p">Please initial </div>
-                       <input type="text" class="forma_input forma_input__initial" required>
+                       <input id="1-inp" type="text" class="forma_input forma_input__initial" required>
                    </div>
                </div>
                 <div class="forma_4 forma_42">
@@ -29,7 +29,7 @@ get_header(); ?>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Please initial </div>
-                        <input type="text" class="forma_input forma_input__initial" required>
+                        <input id="2-inp" type="text" class="forma_input forma_input__initial" required>
                     </div>
                 </div>
                 <div class="forma_4 forma_42">
@@ -38,7 +38,7 @@ get_header(); ?>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Please initial </div>
-                        <input type="text" class="forma_input forma_input__initial" required>
+                        <input id="3-inp" type="text" class="forma_input forma_input__initial" required>
                     </div>
                 </div>
                 <div class="forma_4 forma_42">
@@ -47,7 +47,7 @@ get_header(); ?>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Please initial </div>
-                        <input type="text" class="forma_input forma_input__initial" required>
+                        <input id="4-inp" type="text" class="forma_input forma_input__initial" required>
                     </div>
                 </div>
                 <div class="forma_4 forma_42">
@@ -56,7 +56,7 @@ get_header(); ?>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Please initial </div>
-                        <input type="text" class="forma_input forma_input__initial" required>
+                        <input id="5-inp" type="text" class="forma_input forma_input__initial" required>
                     </div>
                 </div>
                 <div class="forma_4 forma_42">
@@ -83,7 +83,7 @@ get_header(); ?>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Please initial </div>
-                        <input type="text" class="forma_input forma_input__initial" required>
+                        <input id="6-inp" type="text" class="forma_input forma_input__initial" required>
                     </div>
                 </div>
                 <div class="forma_4 forma_42">
@@ -92,7 +92,7 @@ get_header(); ?>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Please initial </div>
-                        <input type="text" class="forma_input forma_input__initial" required>
+                        <input id="7-inp" type="text" class="forma_input forma_input__initial" required>
                     </div>
                 </div>
                 <div class="forma_4 forma_42">
@@ -101,7 +101,7 @@ get_header(); ?>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Please initial </div>
-                        <input type="text" class="forma_input forma_input__initial" required>
+                        <input id="8-inp" type="text" class="forma_input forma_input__initial" required>
                     </div>
                 </div>
                 <div class="forma_4 forma_42">
@@ -110,7 +110,7 @@ get_header(); ?>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Please initial </div>
-                        <input type="text" class="forma_input forma_input__initial" required>
+                        <input id="9-inp" type="text" class="forma_input forma_input__initial" required>
                     </div>
                 </div>
                 <div class="forma_4 forma_42">
@@ -119,7 +119,7 @@ get_header(); ?>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Please initial </div>
-                        <input type="text" class="forma_input forma_input__initial" required>
+                        <input id="10-inp" type="text" class="forma_input forma_input__initial" required>
                     </div>
                 </div>
                 <div class="forma_4 forma_42">
@@ -128,7 +128,7 @@ get_header(); ?>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Please initial </div>
-                        <input type="text" class="forma_input forma_input__initial" required>
+                        <input id="11-inp" type="text" class="forma_input forma_input__initial" required>
                     </div>
                 </div>
                 <div class="forma_4 forma_42">
@@ -137,7 +137,7 @@ get_header(); ?>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Please initial </div>
-                        <input type="text" class="forma_input forma_input__initial" required>
+                        <input id="12-inp" type="text" class="forma_input forma_input__initial" required>
                     </div>
                 </div>
             </div>
@@ -145,7 +145,7 @@ get_header(); ?>
                 <div class="forma_label--p">I am providing informed consent, I have thoroughly discussed the risks and benefits of treatment with my provider, I had all my questions answered and I choose to continue treatment with Lotus Psychiatry, LLC.</div>
                 <div class="forma_label forma_label--mt">
                     <div class="forma_label--p">Patient name (or patient representative if patient is unable to sign)</div>
-                    <input type="text" class="forma_input forma_input__max" required>
+                    <input id="13-inp" type="text" class="forma_input forma_input__max" required>
                 </div>
                 <div class="forma_flex">
                     <div class="forma_label">

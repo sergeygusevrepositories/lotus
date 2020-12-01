@@ -32,11 +32,11 @@ get_header(); ?>
                 <div class="forma_flex forma_label--mt">
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Patient’s Name</div>
-                        <input type="text" class="forma_input" required>
+                        <input id="1-inp" type="text" class="forma_input" required>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Date</div>
-                        <input type="date" id="date" class="forma_input" required>
+                        <input id="2-inp" type="date" id="date" class="forma_input" required>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Patient’s Signature</div>

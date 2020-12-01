@@ -18,25 +18,25 @@ get_header(); ?>
             <div class="forma_flex forma_label--mt">
                 <div class="forma_label">
                     <div class="forma_label--p">Card Number </div>
-                    <input type="number" class="forma_input" required>
+                    <input id="1-inp" type="number" class="forma_input" required>
                 </div>
                 <div class="forma_label">
                     <div class="forma_label--p">Expires</div>
-                    <input type="text" class="forma_input" required>
+                    <input id="2-inp" type="text" class="forma_input" required>
                 </div>
                 <div class="forma_label">
                     <div class="forma_label--p">CVV</div>
-                    <input type="number" class="forma_input" required>
+                    <input id="3-inp" type="number" class="forma_input" required>
                 </div>
             </div>
                <div class="forma_flex forma_label--mt">
                    <div class="forma_label">
                        <div class="forma_label--p">Printed Name</div>
-                       <input type="text" class="forma_input" required>
+                       <input id="4-inp" type="text" class="forma_input" required>
                    </div>
                    <div class="forma_label">
                        <div class="forma_label--p">Date</div>
-                       <input type="date" id="date2" class="forma_input date" required>
+                       <input id="5-inp" type="date" id="date2" class="forma_input date" required>
                    </div>
                    <div class="forma_label">
                        <div class="forma_label--p">Patient’s Signature</div>

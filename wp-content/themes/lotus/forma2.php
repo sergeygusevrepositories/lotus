@@ -19,7 +19,21 @@ get_header(); ?>
                  <div class="forma_label">
                      <div class="forma_label--p">Signature of Patient or <br>
                          Legal Representative</div>
-                     <div class="forma_sign"></div>
+                     <div class="forma_sign">
+                         <div id="signature-pad" class="signature-pad">
+                             <div class="signature-pad--body">
+                                 <canvas id="signature-canvas"></canvas>
+                             </div>
+                             <div class="signature-pad--footer">
+                                 <div class="signature-pad--actions">
+                                     <div>
+                                         <button type="button" class="button clear" data-action="clear">Clear</button>
+                                         <button type="button" class="button" data-action="undo">Undo</button>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
                  </div>
                  <div class="forma_label">
                      <div class="forma_label--p">Date</div>
@@ -65,20 +79,20 @@ get_header(); ?>
                <div class="forma_b">but acknowledgment could not be obtained because:</div>
                <div class="forma_label forma_label--mt">
                    <div class="forma_label--p">Patient/representative refused to sign</div>
-                   <input type="text" class="forma_input forma_input__max" required>
+                   <input id="patient-inp" type="text" class="forma_input forma_input__max" required>
                </div>
                <div class="forma_label forma_label--mt">
                    <div class="forma_label--p">Emergency situation prevented us from obtaining acknowledgement
                        at this time (will attempt again at a later date)</div>
-                   <input type="text" class="forma_input forma_input__max" required>
+                   <input id="emergency-inp" type="text" class="forma_input forma_input__max" required>
                </div>
                <div class="forma_label forma_label--mt">
                    <div class="forma_label--p">Reason for refusal</div>
-                   <input type="text" class="forma_input forma_input__max" required>
+                   <input id="reason-inp" type="text" class="forma_input forma_input__max" required>
                </div>
                <div class="forma_label">
                    <div class="forma_label--p">Communication barriers prohibited obtaining acknowledgement (Explain):</div>
-                   <textarea class="forma_input forma_area forma_area1">
+                   <textarea id="communication-area" class="forma_input forma_area forma_area1">
                    </textarea>
                </div>
            </div>

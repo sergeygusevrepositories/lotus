@@ -14,15 +14,15 @@ get_header(); ?>
            <div class="forma_mental">
                <div class="forma_label">
                    <div class="forma_label--p">City</div>
-                   <input type="text" class="forma_input forma_input__max" required>
+                   <input id="1-inp" type="text" class="forma_input forma_input__max" required>
                </div>
                <div class="forma_label">
                    <div class="forma_label--p">This BENZODIAZEPINE medication</div>
-                   <input type="text" class="forma_input forma_input__max" required>
+                   <input id="2-inp" type="text" class="forma_input forma_input__max" required>
                </div>
                <div class="forma_label">
                    <div class="forma_label--p">is being used to manage or control symptoms of</div>
-                   <input type="text" class="forma_input forma_input__max" required>
+                   <input id="3-inp" type="text" class="forma_input forma_input__max" required>
                </div>
            </div>
             <div class="forma_div">
@@ -55,11 +55,11 @@ get_header(); ?>
                 <div class="forma_flex forma_label--mt">
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Patient’s Name</div>
-                        <input type="text" class="forma_input" required>
+                        <input id="4-inp" type="text" class="forma_input" required>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Date</div>
-                        <input type="date" id="date1" class="forma_input" required>
+                        <input id="5-inp" type="date" id="date1" class="forma_input" required>
                     </div>
                     <div class="forma_label forma_label--mt">
                         <div class="forma_label--p">Patient’s Signature</div>

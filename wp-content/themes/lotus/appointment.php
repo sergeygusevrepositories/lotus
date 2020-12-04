@@ -17,20 +17,19 @@ get_header(); ?>
                <form>
                    <div class="appoint_form">
                        <div>
-                           <input type="text" class="appoint_input" placeholder="Name">
-                           <input type="tel" class="appoint_input" placeholder="Phone">
-                           <input type="tel" class="appoint_input" placeholder="Mail">
-                           <input id="date" class="appoint_input" type="date">
+                           <input id="1-inp" type="text" class="appoint_input" placeholder="Name">
+                           <input id="2-inp" type="tel" class="appoint_input" placeholder="Phone">
+                           <input id="3-inp" type="tel" class="appoint_input" placeholder="Mail">
+                           <input id="4-inp" id="date" class="appoint_input" type="date">
                        </div>
-                       <textarea class="appoint_textarea" placeholder="Text"></textarea>
+                       <textarea id="1-area" class="appoint_textarea" placeholder="Text"></textarea>
                    </div>
                    <div class="appoint_p">
                        You can send a message to scheduling department <b>24/7</b> or to call <b>814-243-0414</b>  M-F 9-5
                    </div>
                    <div class="appoint_btn">
-                       <button type="submit" href="#modal3" data-fancybox class="btn">
-                           Send Request
-                       </button>
+                       <button id="submit14" type="submit" class="btn sgus-submit">Send Request</button>
+                       <button id="submit142" href="#modal3" data-fancybox style="display: none" ></button>
                    </div>
                </form>
        </div>

@@ -37,10 +37,12 @@
         let signImg = false;
         let insuranceForm = false;
         let feedbackForm = false;
+        let appointForm = false;
         let html = "";
         let title = "";
         let firstName = "";
         let flag = false;
+        let appointFlag = false;
 
         switch (el.target.id) {
 
@@ -347,6 +349,27 @@
                 ]);
 
                 break;
+
+            case "submit14":
+
+                el.preventDefault();
+                appointForm = true;
+                firstName = $("#1-inp").val();
+                flag = true;
+                appointFlag = true;
+
+                sgusInput([
+                    "1-inp",
+                    "2-inp",
+                    "3-inp",
+                    "4-inp"
+                ]);
+
+                sgusArea([
+                    "1-area"
+                ]);
+
+                break;
         }
 
         function sgusRadio(ids) {
@@ -469,7 +492,7 @@
 
             let url = '/wp-content/plugins/send-pdf/includes/ajax.php';
 
-            if (!insuranceForm && !feedbackForm) {
+            if (!insuranceForm && !feedbackForm && !appointForm) {
                 let canvas = document.getElementById("signature-canvas");
                 let img = canvas.toDataURL("image/png");
 
@@ -492,12 +515,17 @@
                 html = '<section class="forma">' + $(".forma").html() + '</section>';
                 title = printName + " отправил форму: «" + $("h1").text() + "»";
             } else {
-                if (!feedbackForm) {
+                if (!feedbackForm && !appointForm) {
                     title = firstName + " отправил форму: «" + $(".seven_title").text() + "»";
                     html = '<section class="seven">' + $(".seven").html() + '</section>';
                 } else {
-                    title = firstName + " отправил форму: «" + $(".feedback_title").text() + "»";
-                    html = '<section class="feedback">' + $(".feedback").html() + '</section>';
+                    if (!appointForm) {
+                        title = firstName + " отправил форму: «" + $(".feedback_title").text() + "»";
+                        html = '<section class="feedback">' + $(".feedback").html() + '</section>';
+                    } else {
+                        title = firstName + " отправил форму: «" + $(".appoint_title").text() + "»";
+                        html = '<section class="appoint">' + $(".appoint").html() + '</section>';
+                    }
                 }
             }
 
@@ -513,7 +541,11 @@
                 success: function(resp) {
                     if (resp === "success") {
                         if (flag) {
-                            $(".fancybox-container").remove();
+                            if (appointFlag) {
+                                $("#" + submit.attr('id') + "2").click();
+                            } else {
+                                $(".fancybox-container").remove();
+                            }
                         } else {
                             $("#" + submit.attr('id') + "2").click();
                         }

@@ -1,8 +1,29 @@
-.forma_col--left{float:left;}
+/*.forma_col--left{float:left;}*/
 .forma_submit{display:none;}
-.forma_label{float:left;width:33%}
-.forma_label--p{font-size:12px;}
-.sgus-last{float:none}
-.sgus-25{width:25%}
-.sgus-100{width:100%;}
+
+/*.forma_label--p{font-size:12px;}*/
+/*.sgus-last{float:none}*/
+/*.sgus-25{width:25%}*/
+/*.sgus-100{width:100%;}*/
+
+.forma_label {
+    margin-bottom: 20px;
+    /*float:left;*/
+    /*width:33%;*/
+    /*position: relative;*/
+}
+
+.forma_mental {
+    padding: 20px;
+}
+
+.forma_top {
+    font-size: 24px;
+}
+
+.forma_b {
+    font-weight: bold;
+}
+
+
 

@@ -2,12 +2,14 @@ let wrapper = document.getElementById("signature-pad");
 let clearButton = wrapper.querySelector("[data-action=clear]");
 
 let undoButton = wrapper.querySelector("[data-action=undo]");
-let sendApplication = document.getElementById('send-application');
+let sendApplication = document.querySelector(".sgus-submit");
 
 let canvas = wrapper.querySelector("canvas");
 let signaturePad = new SignaturePad(canvas, {
-    backgroundColor: 'rgb(255, 255, 255)'
+    backgroundColor: '#f8f8f8'
 });
+
+let canvasDiv = document.getElementById("signature-pad");
 
 function resizeCanvas() {
     let ratio =  Math.max(window.devicePixelRatio || 1, 1);
@@ -70,6 +72,8 @@ undoButton.addEventListener("click", function (event) {
 
 sendApplication.addEventListener("click", function (event) {
     if (signaturePad.isEmpty()) {
-        alert("Please provide a signature first.");
+        canvasDiv.classList.add("error-red");
+    } else {
+        canvasDiv.classList.remove("error-red");
     }
 });

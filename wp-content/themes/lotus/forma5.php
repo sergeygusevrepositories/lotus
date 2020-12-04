@@ -15,7 +15,7 @@ get_header(); ?>
                 <div class="forma_flex">
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">Patient Name:</div>
-                        <input id="1-inp" type="text" class="forma_input forma_input__max" required>
+                        <input id="1-inp" type="text" class="printed_name forma_input forma_input__max" required>
                     </div>
                     <div class="forma_label forma_label5">
                         <div class="forma_label--p">State:</div>
@@ -228,7 +228,21 @@ get_header(); ?>
                 <div class="forma_flex forma_label--mt">
                     <div class="forma_label">
                         <div class="forma_label--p">Your signature or <br> Personal Representative’s signature </div>
-                        <div class="forma_sign"></div>
+                        <div class="forma_sign">
+                            <div id="signature-pad" class="signature-pad">
+                                <div class="signature-pad--body">
+                                    <canvas id="signature-canvas"></canvas>
+                                </div>
+                                <div class="signature-pad--footer">
+                                    <div class="signature-pad--actions">
+                                        <div>
+                                            <button type="button" class="button clear" data-action="clear">Clear</button>
+                                            <button type="button" class="button" data-action="undo">Undo</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="forma_label">
                         <div class="forma_label--p">Date</div>
@@ -247,7 +261,8 @@ get_header(); ?>
             </div>
             <div class="forma_bottom">
                 <div class="forma_submit">
-                    <button id="submit5" type="submit" href="#modal2" data-fancybox class="btn sgus-submit">Submit</button>
+                    <button id="submit5" type="submit" class="btn sgus-submit">Submit</button>
+                    <button id="submit52" type="submit" href="#modal2" data-fancybox style="display: none"></button>
                 </div>
             </div>
         </div>
@@ -281,7 +296,7 @@ get_header(); ?>
                 <div class="modal_p">Ваша форма добавлена</div>
             </div>
             <div class="modal_btn">
-                <a href="newpatient.html" class="btn">
+                <a href="/newpatient" class="btn">
                     Заполнить остальные формы
                 </a>
             </div>

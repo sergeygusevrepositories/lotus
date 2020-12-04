@@ -1,14 +1,25 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+
 class SendEmail {
-    public static function send($atts) {
+    public static function send($atts, $flag = false) {
+
         $mail = new PHPMailer(true);
 
         $mail->isSMTP();
-        $mail->Host       = get_option('smtp_server');
+        $mail->CharSet = 'utf-8';
+//        $mail->Host       = get_option('smtp_server');
+//        $mail->Host       = 'smtp.gmail.com';
+        $mail->Host       = 'mail.adm.tools';
         $mail->SMTPAuth   = true;
-        $mail->Username   = get_option('smtp_user');
-        $mail->Password   = get_option('smtp_password');
+//        $mail->Username   = get_option('smtp_user');
+//        $mail->Username   = 'mikaelgubin@gmail.com';
+        $mail->Username   = 'send@lotuspsychiatric.com';
+//        $mail->Password   = get_option('smtp_password');
+//        $mail->Password   = 'Od[@|7>j[!{d4gU';
+        $mail->Password   = 'p47a&y8%ZJ&S';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
@@ -20,26 +31,22 @@ class SendEmail {
             )
         );
 
-        $mail->SetFrom("from@domain.co","my name", 0);
-        $mail->addAddress('gusev6203@gmail.com', 'Joe User');
+        $mail->SetFrom("send@lotuspsychiatric.com","Lotus", 0);
+        $mail->addAddress('gusev6203@gmail.com', 'Sergey');
+        $mail->addAddress('matveyboyko@gmail.com');
 
-//    $mail->addAttachment('filename.pdf');
+        $mail->addAttachment(plugin_dir_path(__FILE__) . 'output/output.pdf');
 
         $mail->isHTML(true);
-        $mail->Subject = 'Here is the subject3';
-        $mail->Body    = self::parser($atts);
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        $mail->Subject = $atts;
+        $mail->Body    = $atts;
 
         if ($mail->send()) {
-//        if (unlink('filename.pdf') && unlink('image.png')) {
-//            echo 'Message has been sent';
-//        }
+            if (!$flag) {
+                unlink(plugin_dir_path(__FILE__) . 'output/image.png');
+            }
+            unlink(plugin_dir_path(__FILE__) . 'output/output.pdf');
+            echo "success";
         }
-
-
-    }
-
-    public static function parser($atts) {
-        return json_decode($atts['data'], true);
     }
 }

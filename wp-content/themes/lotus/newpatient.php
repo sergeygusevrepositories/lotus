@@ -101,34 +101,32 @@ get_header(); ?>
 <div style="display: none;">
     <div class="seven" id="seven">
         <form>
-       <div class="seven_white">
-           <div class="seven_title">Your Insurance Information</div>
-           <div class="seven_form">
-               <div class="seven_col">
-                   <input type="text" class="seven_input" placeholder="First name" required>
-                   <input type="tel" class="seven_input" placeholder="Phone number" required>
-                   <input type="text" class="seven_input" placeholder="Sex" required>
-                   <input type="text" class="seven_input" placeholder="Insurance name" required>
-               </div>
-               <div class="seven_col">
-                   <input type="text" class="seven_input" placeholder="Last name" required>
-                   <input type="text" class="seven_input" placeholder="Date of birth" id="date" name="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" required>
-                   <input type="text" class="seven_input" placeholder="Address" required>
-                   <input type="text" class="seven_input" placeholder="Subscriber ID" required>
-               </div>
-           </div>
-       </div>
-           <div class="seven_blue">
+            <div class="seven_white">
+                <div class="seven_title">Your Insurance Information</div>
+                <div class="seven_form">
+                    <div class="seven_col">
+                        <input id="1-inp" type="text" class="seven_input" placeholder="First name" required>
+                        <input id="2-inp" type="tel" class="seven_input" placeholder="Phone number" required>
+                        <input id="3-inp" type="text" class="seven_input" placeholder="Sex" required>
+                        <input id="4-inp" type="text" class="seven_input" placeholder="Insurance name" required>
+                    </div>
+                    <div class="seven_col">
+                       <input id="5-inp" type="text" class="seven_input" placeholder="Last name" required>
+                       <input id="6-inp" type="text" class="seven_input" placeholder="Date of birth" id="date" name="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" required>
+                       <input id="7-inp" type="text" class="seven_input" placeholder="Address" required>
+                       <input id="8-inp" type="text" class="seven_input" placeholder="Subscriber ID" required>
+                    </div>
+                </div>
+            </div>
+            <div class="seven_blue">
               <div class="seven_politic">
-                  <input type="checkbox" required checked>
-                  <div class="seven_politic--p">* I have read Notice of<a href="forma1.html" target="_blank">Privacy Practices</a></div>
+                  <input id="1-chkb" type="checkbox" required checked>
+                  <div class="seven_politic--p">* I have read Notice of <a href="/notice-of-privacy-practices/" target="_blank">Privacy Practices</a></div>
               </div>
                <div class="seven_btn">
-                   <button type="submit" class="btn">
-                       Send Information
-                   </button>
+                   <button id="submit12" class="btn sgus-submit">Send Information</button>
                </div>
-           </div>
+            </div>
         </form>
     </div>
 </div>

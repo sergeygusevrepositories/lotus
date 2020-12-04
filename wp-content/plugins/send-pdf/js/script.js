@@ -1,32 +1,46 @@
 (function( $ ) {
     'use strict';
 
-    let submit = document.querySelector(".sgus-submit");
+    // let url = '/wp-content/plugins/send-pdf/includes/ajax.php';
+    // let html1 = '<section class="forma">' + $(".forma").html() + '</section>';
+    // html1 = html1.replace(/>\s+?</g, '><');
+    //
+    // $.ajax({
+    //     type: "POST",
+    //     async: false,
+    //     url: url,
+    //     data: {
+    //         action: "test",
+    //         html: html1,
+    //         title: "title"
+    //     },
+    //     success: function(resp) {
+    //         console.log(resp);
+    //     }
+    // });
+    //
+    // return false;
 
-    submit.addEventListener('click', (el) => {
 
+
+
+
+
+
+
+
+    let submit = $(".sgus-submit");
+
+    submit.on('click', (el) => {
+
+        let printName = $("input[class^=printed_name]").val();
         let signImg = false;
-        let url = '/wp-content/plugins/send-pdf/includes/ajax.php';
-
-        let canvas = document.getElementById("signature-canvas");
-        let img = canvas.toDataURL("image/png");
-
-        $.ajax({
-            type: "POST",
-            async: false,
-            url: url,
-            data: {
-                action: "createImgFromCanvas",
-                signature: img
-            },
-            success: function(resp) {
-                if (resp == "success") {
-                    signImg = true;
-                }
-            }
-        });
-
+        let insuranceForm = false;
+        let feedbackForm = false;
         let html = "";
+        let title = "";
+        let firstName = "";
+        let flag = false;
 
         switch (el.target.id) {
 
@@ -36,267 +50,480 @@
 
             case "submit2":
 
-                signImg ? sgusAddSignature() : '';
+                sgusInput([
+                    "date2",
+                    "printed_name",
+                    "patient-inp",
+                    "emergency-inp",
+                    "reason-inp",
+                    "date1"
+                ]);
 
-                sgusInput("date2");
-                sgusInput("printed_name");
-                sgusInput("patient-inp");
-                sgusInput("emergency-inp");
-                sgusInput("reason-inp");
-                sgusInput("date1");
+                sgusArea([
+                    "communication-area"
+                ]);
 
-                sgusArea("communication-area");
-
-                sgusChkb("parent-chkb");
-                sgusChkb("executor-chkb");
-                sgusChkb("court-chkb");
-                sgusChkb("power-chkb");
+                sgusChkb([
+                    "parent-chkb",
+                    "executor-chkb",
+                    "court-chkb",
+                    "power-chkb"
+                ]);
 
                 break;
 
             case "submit3":
 
-                sgusRadio("bull1");
-                sgusRadio("bull2");
-                sgusRadio("bull3");
-                sgusRadio("bull4");
-                sgusRadio("bull5");
-                sgusRadio("bull6");
-                sgusRadio("bull7");
-                sgusRadio("bull8");
-                sgusRadio("bull9");
-                sgusRadio("bull10");
+                sgusRadio([
+                    "bull1",
+                    "bull2",
+                    "bull3",
+                    "bull4",
+                    "bull5",
+                    "bull6",
+                    "bull7",
+                    "bull8",
+                    "bull9",
+                    "bull10"
+                ]);
 
-                sgusChkb("depressed-chkb");
-                sgusChkb("excessive-chkb");
-                sgusChkb("unreasonable-chkb");
-                sgusChkb("lost-chkb");
-                sgusChkb("racing-chkb");
-                sgusChkb("fear-chkb");
-                sgusChkb("not-chkb");
-                sgusChkb("easily-chkb");
-                sgusChkb("repetitive-chkb");
-                sgusChkb("too-chkb");
-                sgusChkb("over-chkb");
-                sgusChkb("upsetting-chkb");
-                sgusChkb("sluggish-chkb");
-                sgusChkb("impulsive-chkb");
-                sgusChkb("recent-chkb");
-                sgusChkb("agitated-chkb");
-                sgusChkb("see-chkb");
-                sgusChkb("work-chkb");
-                sgusChkb("never-chkb");
-                sgusChkb("suspect-chkb");
-                sgusChkb("violent-chkb");
-                sgusChkb("cannot-chkb");
-                sgusChkb("tense-chkb");
-                sgusChkb("self-chkb");
-                sgusChkb("afraid-chkb");
-                sgusChkb("worry-chkb");
-                sgusChkb("anger-chkb");
-                sgusChkb("inflated-chkb");
-                sgusChkb("panic-chkb");
-                sgusChkb("careless-chkb");
-                sgusChkb("feel-chkb");
-                sgusChkb("thoughts-chkb");
-                sgusChkb("financial-chkb");
+                sgusChkb([
+                    "depressed-chkb",
+                    "excessive-chkb",
+                    "unreasonable-chkb",
+                    "lost-chkb",
+                    "racing-chkb",
+                    "fear-chkb",
+                    "not-chkb",
+                    "easily-chkb",
+                    "repetitive-chkb",
+                    "too-chkb",
+                    "over-chkb",
+                    "upsetting-chkb",
+                    "sluggish-chkb",
+                    "impulsive-chkb",
+                    "recent-chkb",
+                    "agitated-chkb",
+                    "see-chkb",
+                    "work-chkb",
+                    "never-chkb",
+                    "suspect-chkb",
+                    "violent-chkb",
+                    "cannot-chkb",
+                    "tense-chkb",
+                    "self-chkb",
+                    "afraid-chkb",
+                    "worry-chkb",
+                    "anger-chkb",
+                    "inflated-chkb",
+                    "panic-chkb",
+                    "careless-chkb",
+                    "feel-chkb",
+                    "thoughts-chkb",
+                    "financial-chkb"
+                ]);
 
-                sgusInput("date");
-                sgusInput("contract-phone-inp");
-                sgusInput("social-inp");
-                sgusInput("zip-inp");
-                sgusInput("email-inp");
-                sgusInput("childrens-inp");
-                sgusInput("main-phone-inp");
-                sgusInput("other-phone-inp");
-                sgusInput("first-inp");
-                sgusInput("last-inp");
-                sgusInput("gender-inp");
-                sgusInput("address-inp");
-                sgusInput("city-inp");
-                sgusInput("state-inp");
-                sgusInput("contract-first-inp");
-                sgusInput("contract-last-inp");
-                sgusInput("contract-relation-inp");
-                sgusInput("primary-inp");
-                sgusInput("describe-inp");
-                sgusInput("recreational-inp");
-                sgusInput("tobacco-inp");
-                sgusInput("birth-place-inp");
-                sgusInput("grow-up-inp");
-                sgusInput("separated-inp");
-                sgusInput("fathers-inp");
-                sgusInput("mothers-inp");
-                sgusInput("siblings-inp");
-                sgusInput("development-inp");
-                sgusInput("victim-inp");
-                sgusInput("highest-inp");
-                sgusInput("jobs-inp");
-                sgusInput("current-inp");
-                sgusInput("duration-inp");
-                sgusInput("desc-rel-inp");
-                sgusInput("spouse-inp");
-                sgusInput("how-many-inp");
-                sgusInput("activities-inp");
-                sgusInput("details-inp");
+                sgusInput([
+                    "date",
+                    "contract-phone-inp",
+                    "social-inp",
+                    "zip-inp",
+                    "email-inp",
+                    "childrens-inp",
+                    "main-phone-inp",
+                    "other-phone-inp",
+                    "first-inp",
+                    "last-inp",
+                    "gender-inp",
+                    "address-inp",
+                    "city-inp",
+                    "state-inp",
+                    "contract-first-inp",
+                    "contract-last-inp",
+                    "contract-relation-inp",
+                    "primary-inp",
+                    "describe-inp",
+                    "recreational-inp",
+                    "tobacco-inp",
+                    "birth-place-inp",
+                    "grow-up-inp",
+                    "separated-inp",
+                    "fathers-inp",
+                    "mothers-inp",
+                    "siblings-inp",
+                    "development-inp",
+                    "victim-inp",
+                    "highest-inp",
+                    "jobs-inp",
+                    "current-inp",
+                    "duration-inp",
+                    "desc-rel-inp",
+                    "spouse-inp",
+                    "how-many-inp",
+                    "activities-inp",
+                    "details-inp"
+                ]);
 
-                sgusArea("problems-area");
-                sgusArea("where-area");
-                sgusArea("whom-area");
-                sgusArea("when-area");
-                sgusArea("medication-area");
-                sgusArea("please-area");
-                sgusArea("list-area");
-                sgusArea("which-area");
-                sgusArea("yes-area");
-                sgusArea("history-area");
-                sgusArea("additional-area");
+                sgusArea([
+                    "problems-area",
+                    "where-area",
+                    "whom-area",
+                    "when-area",
+                    "medication-area",
+                    "please-area",
+                    "list-area",
+                    "which-area",
+                    "yes-area",
+                    "history-area",
+                    "additional-area"
+                ]);
 
                 break;
 
             case "submit4":
-                sgusInput("1-inp");
-                sgusInput("2-inp");
-                sgusInput("3-inp");
-                sgusInput("4-inp");
-                sgusInput("5-inp");
-                sgusInput("6-inp");
-                sgusInput("7-inp");
-                sgusInput("8-inp");
-                sgusInput("9-inp");
-                sgusInput("10-inp");
-                sgusInput("11-inp");
-                sgusInput("12-inp");
-                sgusInput("13-inp");
-                sgusInput("date1");
+
+                sgusInput([
+                    "1-inp",
+                    "2-inp",
+                    "3-inp",
+                    "4-inp",
+                    "5-inp",
+                    "6-inp",
+                    "7-inp",
+                    "8-inp",
+                    "9-inp",
+                    "10-inp",
+                    "11-inp",
+                    "12-inp",
+                    "13-inp",
+                    "date1"
+                ]);
 
                 break;
 
             case "submit5":
-                sgusInput("1-inp");
-                sgusInput("2-inp");
-                sgusInput("3-inp");
-                sgusInput("4-inp");
-                sgusInput("5-inp");
-                sgusInput("6-inp");
-                sgusInput("7-inp");
-                sgusInput("8-inp");
-                sgusInput("9-inp");
-                sgusInput("10-inp");
-                sgusInput("11-inp");
-                sgusInput("12-inp");
-                sgusInput("13-inp");
-                sgusInput("14-inp");
-                sgusInput("15-inp");
-                sgusInput("16-inp");
-                sgusInput("17-inp");
-                sgusInput("18-inp");
-                sgusInput("19-inp");
-                sgusInput("20-inp");
-                sgusInput("21-inp");
-                sgusInput("22-inp");
-                sgusInput("23-inp");
-                sgusInput("24-inp");
-                sgusInput("25-inp");
-                sgusInput("26-inp");
-                sgusInput("27-inp");
 
-                sgusChkb("1-chkb");
-                sgusChkb("2-chkb");
-                sgusChkb("3-chkb");
-                sgusChkb("4-chkb");
-                sgusChkb("5-chkb");
-                sgusChkb("6-chkb");
-                sgusChkb("7-chkb");
-                sgusChkb("8-chkb");
-                sgusChkb("9-chkb");
-                sgusChkb("10-chkb");
-                sgusChkb("11-chkb");
-                sgusChkb("12-chkb");
-                sgusChkb("13-chkb");
-                sgusChkb("14-chkb");
-                sgusChkb("15-chkb");
+                sgusInput([
+                    "1-inp",
+                    "2-inp",
+                    "3-inp",
+                    "4-inp",
+                    "5-inp",
+                    "6-inp",
+                    "7-inp",
+                    "8-inp",
+                    "9-inp",
+                    "10-inp",
+                    "11-inp",
+                    "12-inp",
+                    "13-inp",
+                    "14-inp",
+                    "15-inp",
+                    "16-inp",
+                    "17-inp",
+                    "18-inp",
+                    "19-inp",
+                    "20-inp",
+                    "21-inp",
+                    "22-inp",
+                    "23-inp",
+                    "24-inp",
+                    "25-inp",
+                    "26-inp",
+                    "27-inp"
+                ]);
+
+                sgusChkb([
+                    "1-chkb",
+                    "2-chkb",
+                    "3-chkb",
+                    "4-chkb",
+                    "5-chkb",
+                    "6-chkb",
+                    "7-chkb",
+                    "8-chkb",
+                    "9-chkb",
+                    "10-chkb",
+                    "11-chkb",
+                    "12-chkb",
+                    "13-chkb",
+                    "14-chkb",
+                    "15-chkb"
+                ]);
 
                 break;
 
             case "submit6":
-                sgusInput("1-inp");
-                sgusInput("2-inp");
+
+                sgusInput([
+                    "1-inp",
+                    "2-inp",
+                ]);
 
                 break;
 
             case "submit8":
-                sgusInput("1-inp");
-                sgusInput("2-inp");
-                sgusInput("3-inp");
-                sgusInput("4-inp");
-                sgusInput("5-inp");
+
+                sgusInput([
+                    "1-inp",
+                    "2-inp",
+                    "3-inp",
+                    "4-inp",
+                    "5-inp"
+                ]);
 
                 break;
 
             case "submit9":
-                sgusInput("1-inp");
-                sgusInput("2-inp");
+
+                sgusInput([
+                    "1-inp",
+                    "2-inp"
+                ]);
 
                 break;
 
             case "submit10":
-                sgusInput("1-inp");
-                sgusInput("2-inp");
-                sgusInput("3-inp");
-                sgusInput("4-inp");
-                sgusInput("5-inp");
+
+                sgusInput([
+                    "1-inp",
+                    "2-inp",
+                    "3-inp",
+                    "4-inp",
+                    "5-inp"
+                ]);
 
                 break;
 
             case "submit11":
-                sgusInput("1-inp");
-                sgusInput("2-inp");
-                sgusInput("3-inp");
-                sgusInput("4-inp");
+
+                sgusInput([
+                    "1-inp",
+                    "2-inp",
+                    "3-inp",
+                    "4-inp"
+                ]);
+
+                break;
+
+            case "submit12":
+
+                el.preventDefault();
+                insuranceForm = true;
+                firstName = $("#1-inp").val();
+                flag = true;
+
+                sgusInput([
+                    "1-inp",
+                    "2-inp",
+                    "3-inp",
+                    "4-inp",
+                    "5-inp",
+                    "6-inp",
+                    "7-inp",
+                    "8-inp"
+                ], true);
+
+                sgusChkb([
+                    "1-chkb"
+                ]);
+
+                break;
+
+            case "submit13":
+
+                el.preventDefault();
+                feedbackForm = true;
+                firstName = $("#1-inp").val();
+                flag = true;
+
+                sgusInput([
+                    "1-inp",
+                    "2-inp"
+                ]);
+
+                sgusArea([
+                    "1-area"
+                ]);
 
                 break;
         }
 
-        function sgusRadio(id) {
-            let bull1 = $("input[name=" + id + "]:checked");
-            let bull1Text = bull1.next().text();
-            let bull1Parent = bull1.parent().parent();
-            bull1Parent.html('');
-            bull1Parent.append('<p>' + bull1Text + '</p>')
+        function sgusRadio(ids) {
+            ids.forEach(el => {
+                let radioWrapper = $("input[name=" + el ).parent().parent();
+
+                if (radioWrapper.find('input:checked').length === 0) {
+                    radioWrapper.addClass("error-red").css({
+                        float: 'left',
+                        padding: '17px 0 10px 0'
+                    }).parent().next().css({
+                        clear: 'both'
+                    });
+                } else {
+                    radioWrapper.removeClass("error-red");
+                }
+
+                if (radioWrapper.length && radioWrapper.attr("class").indexOf("error-red") === -1) {
+                    let bull1 = $("input[name=" + el + "]:checked");
+                    let bull1Text = bull1.next().text();
+                    let bull1Parent = bull1.parent().parent();
+                    bull1Parent.html('');
+                    bull1Parent.append('<p>' + bull1Text + '</p>')
+                }
+            });
         }
 
-        function sgusInput(id) {
-            $("#" + id).attr("value", document.getElementById(id).value);
+        function sgusInput(ids) {
+            ids.forEach(el => {
+                let thisEl = $("#" + el);
+                if (thisEl.val().length === 0) {
+                    thisEl.addClass("error-red");
+                } else {
+                    thisEl.removeClass("error-red");
+                }
+            });
+
+            if (!$("input.error-red").length) {
+                ids.forEach(el => {
+                    let inputParent = $("#" + el).parent();
+                    let inputValue = document.getElementById(el).value;
+                    $("#" + el).remove();
+                    inputParent.append("<div style='background: #f8f8f8; padding: 10px;'>" + inputValue + "</div>")
+                })
+            }
         }
 
-        function sgusArea(id) {
-            $("#" + id).text(document.getElementById(id).value);
+        function sgusArea(ids) {
+            ids.forEach(el => {
+                let thisEl = $("#" + el);
+                if (thisEl.length) {
+                    if (thisEl.val().replace(/\s/g, '').length === 0) {
+                        thisEl.addClass("error-red");
+                    } else {
+                        thisEl.removeClass("error-red");
+                    }
+                }
+            });
+
+            if (!$("textarea.error-red").length) {
+                ids.forEach(el => {
+                    let areaParent = $("#" + el).prev();
+                    let areaValue = $("#" + el).val();
+                    $("#" + el).remove();
+                    areaParent.after("<div style='background: #f8f8f8; padding: 10px;'>" + areaValue + "</div>")
+                })
+            }
         }
 
-        function sgusChkb(id) {
-            !document.getElementById(id).checked ? $("#" + id).parent().remove() : '';
+        function sgusChkb(ids) {
+            let chkbWrapper = $("#" + ids[0]).parent().parent();
+
+            if (chkbWrapper.find('input:checked').length === 0) {
+                chkbWrapper.addClass("error-red").css({
+                    padding: '10px'
+                });
+            } else {
+                chkbWrapper.removeClass("error-red");
+            }
+
+            if (chkbWrapper.length && chkbWrapper.attr("class").indexOf("error-red") === -1) {
+                ids.forEach(el => {
+                    !document.getElementById(el).checked ? $("#" + el).parent().remove() : $("#" + el).next().prepend("<img src='/wp-content/plugins/send-pdf/img/800990.svg' height='10' width='10' /> ");
+                });
+            }
         }
 
-        function sgusAddSignature() {
+        function sgusAddSignature(id) {
             let signature = document.getElementById("signature-pad");
             signature.remove();
-            $(".forma_sign").append("<img src='/wp-content/plugins/send-pdf/includes/output/image.png' />");
+            signImg ?
+                $(id).append("<img src='/wp-content/plugins/send-pdf/includes/output/image.png' />") :
+                ''
         }
 
-        html = '<section class="forma">' + document.querySelector(".forma").innerHTML + '</section>';
+        if (!$(".error-red").length) {
+            submit.html('<div id="noTrespassingOuterBarG">\n' +
+                '\t<div id="noTrespassingFrontBarG" class="noTrespassingAnimationG">\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t\t<div class="noTrespassingBarLineG"></div>\n' +
+                '\t</div>\n' +
+                '</div>').css({
+                padding: '0px',
+                transition: 'none'
+            });
 
-        $.ajax({
-            type: "POST",
-            async: false,
-            url: '/wp-content/plugins/send-pdf/includes/ajax.php',
-            data: {
-                html: html.replace(/>\s+?</g, '><'),
-            },
-            success: function(resp) {
-                console.log(resp)
+            let url = '/wp-content/plugins/send-pdf/includes/ajax.php';
+
+            if (!insuranceForm && !feedbackForm) {
+                let canvas = document.getElementById("signature-canvas");
+                let img = canvas.toDataURL("image/png");
+
+                $.ajax({
+                    type: "POST",
+                    async: false,
+                    url: url,
+                    data: {
+                        action: "createImgFromCanvas",
+                        signature: img
+                    },
+                    success: function(resp) {
+                        if (resp == "success") {
+                            signImg = true;
+                            sgusAddSignature(".forma_sign");
+                        }
+                    }
+                });
+
+                html = '<section class="forma">' + $(".forma").html() + '</section>';
+                title = printName + " отправил форму: «" + $("h1").text() + "»";
+            } else {
+                if (!feedbackForm) {
+                    title = firstName + " отправил форму: «" + $(".seven_title").text() + "»";
+                    html = '<section class="seven">' + $(".seven").html() + '</section>';
+                } else {
+                    title = firstName + " отправил форму: «" + $(".feedback_title").text() + "»";
+                    html = '<section class="feedback">' + $(".feedback").html() + '</section>';
+                }
             }
-        });
+
+            $.ajax({
+                type: "POST",
+                async: true,
+                url: '/wp-content/plugins/send-pdf/includes/ajax.php',
+                data: {
+                    html: html.replace(/>\s+?</g, '><'),
+                    title: title,
+                    flag: flag
+                },
+                success: function(resp) {
+                    if (resp === "success") {
+                        if (flag) {
+                            $(".fancybox-container").remove();
+                        } else {
+                            $("#" + submit.attr('id') + "2").click();
+                        }
+                    }
+                }
+            });
+        } else {
+            let errorTop = $(".error-red").eq(0).offset().top - 70;
+            $('html, body').animate({scrollTop: errorTop + 'px'}, 1000);
+        }
     });
 
 })( jQuery );

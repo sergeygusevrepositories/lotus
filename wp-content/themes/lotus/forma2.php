@@ -41,7 +41,7 @@ get_header(); ?>
                  </div>
                  <div class="forma_label">
                      <div class="forma_label--p">Printed Name of Patient’s <br>Representative (if applicable)</div>
-                     <input id="printed_name" type="text" class="forma_input" required style="position: relative;top: -8px;">
+                     <input id="printed_name" type="text" class="printed_name printed_name forma_input" required style="position: relative;top: -8px;">
                  </div>
              </div>
           </div>
@@ -98,7 +98,8 @@ get_header(); ?>
            </div>
            <div class="forma_bottom">
                <div class="forma_submit">
-                   <button id="submit2" type="submit" href="#modal2" data-fancybox class="btn sgus-submit">Submit</button>
+                   <button id="submit2" type="submit" class="btn sgus-submit">Submit</button>
+                   <button id="submit22" href="#modal2" data-fancybox style="display: none"></button>
                </div>
            </div>
        </div>
@@ -132,7 +133,7 @@ get_header(); ?>
                <div class="modal_p">Ваша форма добавлена</div>
            </div>
            <div class="modal_btn">
-               <a href="newpatient.html" class="btn">
+               <a href="/newpatient" class="btn">
                    Заполнить остальные формы
                </a>
            </div>

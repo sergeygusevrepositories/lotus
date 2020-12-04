@@ -49,7 +49,7 @@ get_header(); ?>
                         all appointments are held via telehealth until
                         further notice
                     </p>
-                    <a href="appointment.html" class="btn">
+                    <a href="/appointment" class="btn">
                         schedule your appointment
                     </a>
                 </div>
@@ -72,4 +72,34 @@ get_header(); ?>
             </div>
         </div>
     </section>
+
+    <div style="display: none;">
+        <div class="feedback" id="feedback">
+            <div class="feedback_title">Send message to Ekaterina Filatov</div>
+            <form>
+                <div class="feedback_form">
+                    <div>
+                        <input id="1-inp" type="text" class="feedback_input" placeholder="Name">
+                        <input id="2-inp" type="tel" class="feedback_input" placeholder="Phone">
+                    </div>
+                    <textarea id="1-area" class="feedback_textarea" placeholder="Text"></textarea>
+                </div>
+                <div class="feedback_btn">
+                    <button id="submit13" class="btn sgus-submit">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div style="display: none">
+        <div class="modal1" id="modal1">
+            <div class="modal">
+                <div class="modal_block">
+                    <div class="modal_p">Your message has been sent</div>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php get_footer(); ?>

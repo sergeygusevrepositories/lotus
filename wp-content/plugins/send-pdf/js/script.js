@@ -398,22 +398,24 @@
         }
 
         function sgusInput(ids) {
-            ids.forEach(el => {
-                let thisEl = $("#" + el);
-                if (thisEl.val().length === 0) {
-                    thisEl.addClass("error-red");
-                } else {
-                    thisEl.removeClass("error-red");
-                }
-            });
-
-            if (!$("input.error-red").length) {
+            if ($(".forma input:text").length > 0) {
                 ids.forEach(el => {
-                    let inputParent = $("#" + el).parent();
-                    let inputValue = document.getElementById(el).value;
-                    $("#" + el).remove();
-                    inputParent.append("<div style='background: #f8f8f8; padding: 10px;'>" + inputValue + "</div>")
-                })
+                    let thisEl = $("#" + el);
+                    if (thisEl.val().length === 0) {
+                        thisEl.addClass("error-red");
+                    } else {
+                        thisEl.removeClass("error-red");
+                    }
+                });
+
+                if (!$("input.error-red").length) {
+                    ids.forEach(el => {
+                        let inputParent = $("#" + el).parent();
+                        let inputValue = document.getElementById(el).value;
+                        $("#" + el).remove();
+                        inputParent.append("<div style='background: #f8f8f8; padding: 10px;'>" + inputValue + "</div>")
+                    })
+                }
             }
         }
 
@@ -450,7 +452,7 @@
                 chkbWrapper.removeClass("error-red");
             }
 
-            if (chkbWrapper.length && chkbWrapper.attr("class").indexOf("error-red") === -1) {
+            if (chkbWrapper.length && chkbWrapper.attr("class").indexOf("error-red") === -1 && $("input:checkbox").length !== $("input:checkbox:checked").length) {
                 ids.forEach(el => {
                     !document.getElementById(el).checked ? $("#" + el).parent().remove() : $("#" + el).next().prepend("<img src='/wp-content/plugins/send-pdf/img/800990.svg' height='10' width='10' /> ");
                 });

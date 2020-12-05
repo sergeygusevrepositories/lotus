@@ -43,6 +43,10 @@
         let firstName = "";
         let flag = false;
         let appointFlag = false;
+        let inputArray = [];
+        let areaArray = [];
+        let chkbArray = [];
+        let radioArray = [];
 
         switch (el.target.id) {
 
@@ -386,15 +390,9 @@
                 } else {
                     radioWrapper.removeClass("error-red");
                 }
-
-                if (radioWrapper.length && radioWrapper.attr("class").indexOf("error-red") === -1) {
-                    let bull1 = $("input[name=" + el + "]:checked");
-                    let bull1Text = bull1.next().text();
-                    let bull1Parent = bull1.parent().parent();
-                    bull1Parent.html('');
-                    bull1Parent.append('<p>' + bull1Text + '</p>')
-                }
             });
+
+            radioArray = ids;
         }
 
         function sgusInput(ids) {
@@ -408,14 +406,7 @@
                     }
                 });
 
-                if (!$("input.error-red").length) {
-                    ids.forEach(el => {
-                        let inputParent = $("#" + el).parent();
-                        let inputValue = document.getElementById(el).value;
-                        $("#" + el).remove();
-                        inputParent.append("<div style='background: #f8f8f8; padding: 10px;'>" + inputValue + "</div>")
-                    })
-                }
+                inputArray = ids;
             }
         }
 
@@ -431,14 +422,7 @@
                 }
             });
 
-            if (!$("textarea.error-red").length) {
-                ids.forEach(el => {
-                    let areaParent = $("#" + el).prev();
-                    let areaValue = $("#" + el).val();
-                    $("#" + el).remove();
-                    areaParent.after("<div style='background: #f8f8f8; padding: 10px;'>" + areaValue + "</div>")
-                })
-            }
+            areaArray = ids;
         }
 
         function sgusChkb(ids) {
@@ -452,11 +436,7 @@
                 chkbWrapper.removeClass("error-red");
             }
 
-            if (chkbWrapper.length && chkbWrapper.attr("class").indexOf("error-red") === -1 && $("input:checkbox").length !== $("input:checkbox:checked").length) {
-                ids.forEach(el => {
-                    !document.getElementById(el).checked ? $("#" + el).parent().remove() : $("#" + el).next().prepend("<img src='/wp-content/plugins/send-pdf/img/800990.svg' height='10' width='10' /> ");
-                });
-            }
+            chkbArray = ids;
         }
 
         function sgusAddSignature(id) {
@@ -468,6 +448,44 @@
         }
 
         if (!$(".error-red").length) {
+            if (!$("input.error-red").length) {
+                inputArray.forEach(el => {
+                    let inputParent = $("#" + el).parent();
+                    let inputValue = document.getElementById(el).value;
+                    $("#" + el).remove();
+                    inputParent.append("<div style='background: #f8f8f8; padding: 10px;'>" + inputValue + "</div>")
+                });
+            }
+
+            if (!$("textarea.error-red").length) {
+                areaArray.forEach(el => {
+                    let areaParent = $("#" + el).prev();
+                    let areaValue = $("#" + el).val();
+                    $("#" + el).remove();
+                    areaParent.after("<div style='background: #f8f8f8; padding: 10px;'>" + areaValue + "</div>")
+                })
+            }
+
+            let chkbWrapper = $("#" + chkbArray[0]).parent().parent();
+
+            if (chkbWrapper.length && chkbWrapper.attr("class").indexOf("error-red") === -1 && $("input:checkbox").length !== $("input:checkbox:checked").length) {
+                chkbArray.forEach(el => {
+                    !document.getElementById(el).checked ? $("#" + el).parent().remove() : $("#" + el).next().prepend("<img src='/wp-content/plugins/send-pdf/img/800990.svg' height='10' width='10' /> ");
+                });
+            }
+
+            radioArray.forEach(el => {
+                let radioWrapper = $("input[name=" + el ).parent().parent();
+
+                if (radioWrapper.length && radioWrapper.attr("class").indexOf("error-red") === -1) {
+                    let bull1 = $("input[name=" + el + "]:checked");
+                    let bull1Text = bull1.next().text();
+                    let bull1Parent = bull1.parent().parent();
+                    bull1Parent.html('');
+                    bull1Parent.append('<p>' + bull1Text + '</p>')
+                }
+            });
+
             submit.html('<div id="noTrespassingOuterBarG">\n' +
                 '\t<div id="noTrespassingFrontBarG" class="noTrespassingAnimationG">\n' +
                 '\t\t<div class="noTrespassingBarLineG"></div>\n' +

@@ -396,7 +396,7 @@
         }
 
         function sgusInput(ids) {
-            if ($(".forma input:text").length > 0) {
+            // if ($(".forma input:text").length > 0) {
                 ids.forEach(el => {
                     let thisEl = $("#" + el);
                     if (thisEl.val().length === 0) {
@@ -407,7 +407,7 @@
                 });
 
                 inputArray = ids;
-            }
+            // }
         }
 
         function sgusArea(ids) {
@@ -569,6 +569,8 @@
                         } else {
                             $("#" + submit.attr('id') + "2").click();
                         }
+
+                        submit.remove();
                     }
                 }
             });

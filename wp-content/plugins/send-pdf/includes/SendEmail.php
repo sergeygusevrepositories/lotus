@@ -33,9 +33,9 @@ class SendEmail {
 
         $mail->SetFrom("send@lotuspsychiatric.com","Lotus", 0);
         $mail->addAddress('gusev6203@gmail.com', 'Sergey');
-        $mail->addAddress('matveyboyko@gmail.com');
+        $mail->addAddress('tobeloff@gmail.com');
 
-        $mail->addAttachment(plugin_dir_path(__FILE__) . 'output/output.pdf');
+        $mail->addAttachment(plugin_dir_path(__FILE__) . 'output/' . (str_replace(' ', '_', $atts)) . '.pdf');
 
         $mail->isHTML(true);
         $mail->Subject = $atts;
@@ -45,7 +45,7 @@ class SendEmail {
             if (!$flag) {
                 unlink(plugin_dir_path(__FILE__) . 'output/image.png');
             }
-            unlink(plugin_dir_path(__FILE__) . 'output/output.pdf');
+            unlink(plugin_dir_path(__FILE__) . 'output/' . (str_replace(' ', '_', $atts)) . '.pdf');
             echo "success";
         }
     }

@@ -93,7 +93,7 @@ get_header(); ?>
         </div>
     </div>
 
-    <div style="display: none">
+    <div class="sgus-mess-sent">
         <div class="modal1" id="modal1">
             <div class="modal">
                 <div class="modal_block">

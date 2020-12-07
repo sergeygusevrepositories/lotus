@@ -19,7 +19,7 @@ get_header(); ?>
                        <div>
                            <input id="1-inp" type="text" class="appoint_input" placeholder="Name">
                            <input id="2-inp" type="tel" class="appoint_input" placeholder="Phone">
-                           <input id="3-inp" type="tel" class="appoint_input" placeholder="Mail">
+                           <input id="3-inp" type="tel" class="appoint_input" placeholder="E-mail">
                            <input id="4-inp" id="date" class="appoint_input" type="date">
                        </div>
                        <textarea id="1-area" class="appoint_textarea" placeholder="Text"></textarea>

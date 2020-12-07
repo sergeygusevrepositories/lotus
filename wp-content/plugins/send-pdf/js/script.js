@@ -533,17 +533,17 @@
                 });
 
                 html = '<section class="forma">' + $(".forma").html() + '</section>';
-                title = printName + " отправил форму: «" + $("h1").text() + "»";
+                title = printName + " sent form: «" + $("h1").text() + "»";
             } else {
                 if (!feedbackForm && !appointForm) {
-                    title = firstName + " отправил форму: «" + $(".seven_title").text() + "»";
+                    title = firstName + " sent form: «" + $(".seven_title").text() + "»";
                     html = '<section class="seven">' + $(".seven").html() + '</section>';
                 } else {
                     if (!appointForm) {
-                        title = firstName + " отправил форму: «" + $(".feedback_title").text() + "»";
+                        title = firstName + " sent form: «" + $(".feedback_title").text() + "»";
                         html = '<section class="feedback">' + $(".feedback").html() + '</section>';
                     } else {
-                        title = firstName + " отправил форму: «" + $(".appoint_title").text() + "»";
+                        title = firstName + " sent form: «" + $(".appoint_title").text() + "»";
                         html = '<section class="appoint">' + $(".appoint").html() + '</section>';
                     }
                 }
@@ -564,13 +564,32 @@
                             if (appointFlag) {
                                 $("#" + submit.attr('id') + "2").click();
                             } else {
-                                $(".fancybox-container").remove();
+                                if (insuranceForm) {
+                                    location.reload();
+                                    return false;
+                                }
+                                $(".sgus-mess-sent").css({
+                                    display: 'block',
+                                    position: 'fixed',
+                                    top: '50%',
+                                    left: '50%',
+                                    transform: 'translate(-50%, -50%)',
+                                    zIndex: '99999'
+                                });
                             }
                         } else {
                             $("#" + submit.attr('id') + "2").click();
                         }
 
                         submit.remove();
+                        $(".fancybox-content").css({
+                            padding: '0px'
+                        });
+
+                        $(".fancybox-container, .fancybox-close-small").on('click', () => {
+                            location.reload();
+                            return false;
+                        });
                     }
                 }
             });

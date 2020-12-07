@@ -21,15 +21,16 @@
                 </a>
             </div>
             <nav class="footer_nav">
-                <ul class="footer_ul">
-                    <li class="footer_li"><a href="index.html">HOME</a></li>
-                    <li class="footer_li"><a href="about.html">ABOUT US</a></li>
-                    <li class="footer_li"><a href="services.html">SERVICES</a></li>
-                    <li class="footer_li"><a href="appointment.html">schedule your appointment</a></li>
-                    <li class="footer_li"><a href="payments.html">PAYMENTS</a></li>
-                    <li class="footer_li"><a href="newpatient.html">New patient </a></li>
-                    <li class="footer_li"><a href="resources.html">Resources</a></li>
-                </ul>
+                <?php $args = [
+                    'theme_location' => 'top',
+                    'container' => '',
+                    'menu_class' => 'footer_ul',
+                    'depth'         => 1,
+                    'fallback_cb'   => false,
+                    'add_li_class'  => 'footer_li'
+                ]?>
+                <?php wp_nav_menu($args)?>
+
             </nav>
             <div class="footer_right">
                 <div class="footer_tel">

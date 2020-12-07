@@ -14,7 +14,7 @@ get_header(); ?>
         <div class="payments_row">
             <div class="payments_item">
                 <div class="payments_item--img">
-                    <img src="img/ok.svg" alt="alt">
+                    <img src="<?php bloginfo("template_directory")?>/img/ok.svg" alt="alt">
                 </div>
                 <div class="payments_item--text">
                     Cash, check
@@ -22,7 +22,7 @@ get_header(); ?>
             </div>
             <div class="payments_item">
                 <div class="payments_item--img">
-                    <img src="img/ok.svg" alt="alt">
+                    <img src="<?php bloginfo("template_directory")?>/img/ok.svg" alt="alt">
                 </div>
                 <div class="payments_item--text">
                     Cigna
@@ -164,7 +164,7 @@ get_header(); ?>
                     all appointments are held via telehealth until
                     further notice
                 </p>
-                <a href="appointment.html" class="btn">
+                <a href="/appointment" class="btn">
                     schedule your appointment
                 </a>
             </div>

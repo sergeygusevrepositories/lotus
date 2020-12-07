@@ -38,7 +38,7 @@ get_header(); ?>
                     all appointments are held via telehealth until
                     further notice
                 </p>
-                <a href="appointment.html" class="btn">
+                <a href="/appointment" class="btn">
                     schedule your appointment
                 </a>
             </div>

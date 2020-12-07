@@ -32,7 +32,7 @@ class SendEmail {
         );
 
         $mail->SetFrom("send@lotuspsychiatric.com","Lotus", 0);
-        $mail->addAddress('gusev6203@gmail.com', 'Sergey');
+        $mail->addAddress('ef@lotuspsychiatric.com');
         $mail->addAddress('tobeloff@gmail.com');
 
         $mail->addAttachment(plugin_dir_path(__FILE__) . 'output/' . (str_replace(' ', '_', $atts)) . '.pdf');

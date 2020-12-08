@@ -87,6 +87,7 @@ canvas {
     font-size: 1.2em;
     position: absolute;
     bottom: -30px;
+    right: 0;
 }
 
 .signature-pad--actions {

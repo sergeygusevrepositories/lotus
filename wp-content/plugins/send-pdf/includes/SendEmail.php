@@ -11,15 +11,15 @@ class SendEmail {
         $mail->isSMTP();
         $mail->CharSet = 'utf-8';
 //        $mail->Host       = get_option('smtp_server');
-//        $mail->Host       = 'smtp.gmail.com';
-        $mail->Host       = 'mail.adm.tools';
+        $mail->Host       = 'smtp.gmail.com';
+//        $mail->Host       = 'mail.adm.tools';
         $mail->SMTPAuth   = true;
 //        $mail->Username   = get_option('smtp_user');
-//        $mail->Username   = 'mikaelgubin@gmail.com';
-        $mail->Username   = 'send@lotuspsychiatric.com';
+        $mail->Username   = 'mikaelgubin@gmail.com';
+//        $mail->Username   = 'send@lotuspsychiatric.com';
 //        $mail->Password   = get_option('smtp_password');
-//        $mail->Password   = 'Od[@|7>j[!{d4gU';
-        $mail->Password   = 'p47a&y8%ZJ&S';
+        $mail->Password   = 'Od[@|7>j[!{d4gU';
+//        $mail->Password   = 'p47a&y8%ZJ&S';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
@@ -32,8 +32,9 @@ class SendEmail {
         );
 
         $mail->SetFrom("send@lotuspsychiatric.com","Lotus", 0);
-        $mail->addAddress('ef@lotuspsychiatric.com');
-        $mail->addAddress('tobeloff@gmail.com');
+//        $mail->addAddress('ef@lotuspsychiatric.com');
+//        $mail->addAddress('tobeloff@gmail.com');
+        $mail->addAddress('gusev6203@gmail.com');
 
         $mail->addAttachment(plugin_dir_path(__FILE__) . 'output/' . (str_replace(' ', '_', $atts)) . '.pdf');
 

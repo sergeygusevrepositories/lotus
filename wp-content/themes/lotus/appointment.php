@@ -11,9 +11,7 @@ get_header(); ?>
 <section class="appoint">
    <div class="container">
        <div class="appoint_block">
-           <div class="appoint_title">
-               Please indicate when would you like to be seen
-           </div>
+           <div class="appoint_title">Please indicate when would you like to be seen</div>
                <form>
                    <div class="appoint_form">
                        <div>

@@ -566,7 +566,6 @@
                     action: ""
                 },
                 success: function(resp) {
-                    console.log(resp)
                     if (resp === "success") {
                         if (flag) {
                             if (appointFlag) {

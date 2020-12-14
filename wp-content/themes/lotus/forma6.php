@@ -94,11 +94,6 @@ get_header(); ?>
             <div class="modal_block">
                 <div class="modal_p">Thank you. Your form was submitted</div>
             </div>
-            <div class="modal_btn">
-                <a href="/newpatient" class="btn">
-                    Заполнить остальные формы
-                </a>
-            </div>
         </div>
     </div>
 </div>

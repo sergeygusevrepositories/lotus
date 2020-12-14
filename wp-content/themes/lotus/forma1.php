@@ -366,11 +366,6 @@ do_shortcode( sprintf( '[plugin_shortcode data=\'%s\']', $json ) );
             <div class="modal_block">
                 <div class="modal_p">Thank you. Your form was submitted</div>
             </div>
-            <div class="modal_btn">
-                <button type="submit" class="btn">
-                    Заполнить остальные формы
-                </button>
-            </div>
         </div>
     </div>
 </div>

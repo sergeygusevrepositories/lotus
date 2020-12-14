@@ -1,33 +1,13 @@
 (function( $ ) {
     'use strict';
 
-    // let url = '/wp-content/plugins/send-pdf/includes/ajax.php';
-    // let html1 = '<section class="forma">' + $(".forma").html() + '</section>';
-    // html1 = html1.replace(/>\s+?</g, '><');
-    //
-    // $.ajax({
-    //     type: "POST",
-    //     async: false,
-    //     url: url,
-    //     data: {
-    //         action: "test",
-    //         html: html1,
-    //         title: "title"
-    //     },
-    //     success: function(resp) {
-    //         console.log(resp);
-    //     }
-    // });
-    //
-    // return false;
-
-
-
-
-
-
-
-
+    $("input:radio").on("click", function () {
+        if ($(this).next().html() === "NO" && $(this).parent().parent().parent().next().text().trim().indexOf('If yes', 0) != -1) {
+            $(this).parent().parent().parent().next().hide();
+        } else if ($(this).next().html() === "YES") {
+            $(this).parent().parent().parent().next().show();
+        }
+    });
 
     let submit = $(".sgus-submit");
 
@@ -63,13 +43,25 @@
                     "emergency-inp",
                     "reason-inp",
                     "date1"
+                ], [
+                    "patient-inp",
+                    "emergency-inp",
+                    "reason-inp",
+                    "date1"
                 ]);
 
                 sgusArea([
                     "communication-area"
+                ], [
+                    "communication-area"
                 ]);
 
                 sgusChkb([
+                    "parent-chkb",
+                    "executor-chkb",
+                    "court-chkb",
+                    "power-chkb"
+                ], [
                     "parent-chkb",
                     "executor-chkb",
                     "court-chkb",
@@ -237,6 +229,12 @@
                     "25-inp",
                     "26-inp",
                     "27-inp"
+                ], [
+                    "16-inp",
+                    "18-inp",
+                    "23-inp",
+                    "26-inp",
+                    "27-inp"
                 ]);
 
                 sgusChkb([
@@ -395,10 +393,12 @@
             radioArray = ids;
         }
 
-        function sgusInput(ids) {
+        function sgusInput(ids, unrequired = []) {
             // if ($(".forma input:text").length > 0) {
                 ids.forEach(el => {
                     let thisEl = $("#" + el);
+                    if (unrequired.includes(el))
+                        return;
                     if (thisEl.val().length === 0) {
                         thisEl.addClass("error-red");
                     } else {
@@ -410,11 +410,13 @@
             // }
         }
 
-        function sgusArea(ids) {
+        function sgusArea(ids, unrequired = []) {
             ids.forEach(el => {
+                if (unrequired.includes(el))
+                    return;
                 let thisEl = $("#" + el);
                 if (thisEl.length) {
-                    if (thisEl.val().replace(/\s/g, '').length === 0) {
+                    if (thisEl.val().replace(/\s/g, '').length === 0 && thisEl.parent().prev().find("input:radio:checked").next().text() != "NO") {
                         thisEl.addClass("error-red");
                     } else {
                         thisEl.removeClass("error-red");
@@ -425,16 +427,20 @@
             areaArray = ids;
         }
 
-        function sgusChkb(ids) {
-            let chkbWrapper = $("#" + ids[0]).parent().parent();
+        function sgusChkb(ids, unrequired = []) {
+            ids.forEach(el => {
+                if (!unrequired.includes(el)) {
+                    let chkbWrapper = $("#" + ids[0]).parent().parent();
 
-            if (chkbWrapper.find('input:checked').length === 0) {
-                chkbWrapper.addClass("error-red").css({
-                    padding: '10px'
-                });
-            } else {
-                chkbWrapper.removeClass("error-red");
-            }
+                    if (chkbWrapper.find('input:checked').length === 0) {
+                        chkbWrapper.addClass("error-red").css({
+                            padding: '10px'
+                        });
+                    } else {
+                        chkbWrapper.removeClass("error-red");
+                    }
+                }
+            });
 
             chkbArray = ids;
         }
@@ -556,9 +562,11 @@
                 data: {
                     html: html.replace(/>\s+?</g, '><'),
                     title: title,
-                    flag: flag
+                    flag: flag,
+                    action: ""
                 },
                 success: function(resp) {
+                    console.log(resp)
                     if (resp === "success") {
                         if (flag) {
                             if (appointFlag) {

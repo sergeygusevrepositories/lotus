@@ -20,11 +20,14 @@ class CreatePDF {
         $stylesheet .= file_get_contents(plugin_dir_url( __DIR__ ) . 'css/output.css');
         $mpdf->WriteHTML($stylesheet,\Mpdf\HTMLParserMode::HEADER_CSS);
         $mpdf->WriteHTML($html,\Mpdf\HTMLParserMode::HTML_BODY);
-        $mpdf->Output(plugin_dir_path(__FILE__) . 'output/' . (str_replace(' ', '_', $atts)) . '.pdf', \Mpdf\Output\Destination::FILE);
-        if (file_exists(plugin_dir_path(__FILE__) . 'output/' . (str_replace(' ', '_', $atts)) . '.pdf')) {
+
+        $str = mb_strtolower(str_replace(' ', '_', str_replace('/', '_', str_replace('«', '', str_replace('»', '', str_replace(':', '', $atts))))));
+
+        $mpdf->Output(plugin_dir_path(__FILE__) . 'output/' . $str . '.pdf', \Mpdf\Output\Destination::FILE);
+        if (file_exists(plugin_dir_path(__FILE__) . 'output/' . $str . '.pdf')) {
             require_once plugin_dir_path(__DIR__) . 'includes/SendEmail.php';
 
-            echo SendEmail::send($atts, $flag);
+            echo SendEmail::send($atts, $flag, $str);
         }
     }
 }

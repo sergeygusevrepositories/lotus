@@ -18,7 +18,7 @@ get_header(); ?>
            <div class="patient_block--center">
                <div class="resources_item">
                    <div class="resources_title">Insurance</div>
-                   <div class="resources_p" style="max-width: 620px">You can either call our billing/sceduling department at <a href="tel:814-243-0414" class="resources_tel">814-243-0414</a>
+                   <div class="resources_p" style="max-width: 620px">You can either call our billing/sceduling department at <a href="tel:617-992-4556" class="resources_tel">617-992-4556</a>
                        , or fill out Insurance information form.
                    </div>
                </div>

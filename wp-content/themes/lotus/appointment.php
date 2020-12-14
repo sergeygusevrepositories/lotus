@@ -25,7 +25,7 @@ get_header(); ?>
                        <textarea id="1-area" class="appoint_textarea" placeholder="Text"></textarea>
                    </div>
                    <div class="appoint_p">
-                       You can send a message to scheduling department <b>24/7</b> or to call <b>814-243-0414</b>  M-F 9-5
+                       You can send a message to scheduling department <b>24/7</b> or to call <b>617-992-4556</b>  M-F 9-5
                    </div>
                    <div class="appoint_btn">
                        <button id="submit14" type="submit" class="btn sgus-submit">Send Request</button>

@@ -150,7 +150,7 @@ get_header(); ?>
     <div class="container">
         <div class="payments_p">
             Please contact billing department
-            with any insurance related questions at <a href="tel:814-243-0414">814-243-0414</a>
+            with any insurance related questions at <a href="tel:617-992-4556">617-992-4556</a>
         </div>
     </div>
 </div>

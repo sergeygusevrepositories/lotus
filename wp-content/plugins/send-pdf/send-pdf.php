@@ -7,7 +7,7 @@
 
 require_once plugin_dir_path(__FILE__) . 'vendor/autoload.php';
 
-wp_enqueue_style( 'send-pdf-css-main', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), 3, 'all' );
+wp_enqueue_style( 'send-pdf-css-main', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), 4, 'all' );
 wp_enqueue_style( 'signature-pad-css', plugin_dir_url( __FILE__ ) . 'css/signature-pad.css', array(), 4, 'all' );
 
 wp_deregister_script('jquery');

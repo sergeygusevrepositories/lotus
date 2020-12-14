@@ -114,7 +114,7 @@ add_action('wp_print_styles', 'add_styles');
 if (!function_exists('add_styles')) {
 	function add_styles() {
 	    if(is_admin()) return false;
-		wp_enqueue_style( 'main', get_template_directory_uri().'/css/styles.css' );
+		wp_enqueue_style( 'main', get_template_directory_uri().'/css/styles.css?2' );
         wp_enqueue_style( 'fancy-box-style', get_theme_file_uri( '/libs/jquery.fancybox.min.css' ));
 	}
 }

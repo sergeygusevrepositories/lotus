@@ -10,6 +10,10 @@
     border: 1px solid red;
     border-radius: 3px!important;
 }
+.forma_mental--line,
+.forma_mental--red {
+    clear: both!important;
+}
 #noTrespassingOuterBarG{
     height:38px;
     width:190px;

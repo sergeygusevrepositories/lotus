@@ -573,7 +573,8 @@
                                 $("#" + submit.attr('id') + "2").click();
                             } else {
                                 if (insuranceForm) {
-                                    location.reload();
+                                    window.location.href = '/newpatient';
+                                    // location.reload();
                                     return false;
                                 }
                                 $(".sgus-mess-sent").css({
@@ -595,7 +596,8 @@
                         });
 
                         $(".fancybox-container, .fancybox-close-small").on('click', () => {
-                            location.reload();
+                            window.location.href = '/newpatient';
+                            // location.reload();
                             return false;
                         });
                     }

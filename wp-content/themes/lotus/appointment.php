@@ -60,7 +60,7 @@ get_header(); ?>
     <div id="modal3" class="modal1">
         <div class="modal">
             <div class="modal_block">
-                <div class="modal_p">Спасибо ваш запрос принят</div>
+                <div class="modal_p">Your message was sent</div>
             </div>
         </div>
     </div>

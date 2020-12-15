@@ -11,7 +11,8 @@
     border-radius: 3px!important;
 }
 .forma_mental--line,
-.forma_mental--red {
+.forma_mental--red,
+.sgus-clear-both {
     clear: both!important;
 }
 #noTrespassingOuterBarG{

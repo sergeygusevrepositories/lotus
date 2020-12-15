@@ -418,7 +418,7 @@ get_header(); ?>
                     <div class="forma_label--p">If so, how old were you when they separated?</div>
                     <input id="separated-inp" type="text" class="forma_input forma_input__max">
                 </div>
-                <div class="forma_label">
+                <div class="forma_label sgus-clear-both">
                     <div class="forma_label--p">Father’s occupation growing up:</div>
                     <input id="fathers-inp" type="text" class="forma_input forma_input__max">
                 </div>
@@ -475,7 +475,7 @@ get_header(); ?>
                     <div class="forma_label--p">Spouse or partner’s current occupation:</div>
                     <input id="spouse-inp" type="text" class="forma_input forma_input__max">
                 </div>
-                <div class="forma_label forma_label--mt">
+                <div class="forma_label forma_label--mt sgus-clear-both">
                     <div class="forma_label--p">Do you have any children?</div>
                     <label class="forma_radio">
                         <div class="forma_radio--item">
@@ -500,7 +500,7 @@ get_header(); ?>
                     <div class="forma_label--p">What activities do you enjoy doing?</div>
                     <input id="activities-inp" type="text" class="forma_input forma_input__max">
                 </div>
-                <div class="forma_label forma_label--mt">
+                <div class="forma_label forma_label--mt sgus-clear-both">
                     <div class="forma_label--p">Have you ever been convicted of any crimes, served time, or been on probation?</div>
                     <label class="forma_radio">
                         <div class="forma_radio--item">

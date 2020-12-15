@@ -2,10 +2,23 @@
     'use strict';
 
     $("input:radio").on("click", function () {
-        if ($(this).next().html() === "NO" && $(this).parent().parent().parent().next().text().trim().indexOf('If yes', 0) != -1) {
+        let hideRadio = $(this).parent().parent().parent().next().text().trim();
+        if ($(this).next().html() === "NO" && (
+            hideRadio.indexOf('If yes', 0) != -1 ||
+            hideRadio.indexOf('If so', 0) != -1 ||
+            hideRadio.indexOf('Details', 0) != -1
+        )) {
             $(this).parent().parent().parent().next().hide();
-        } else if ($(this).next().html() === "YES") {
+        } else if ($(this).next().html() === "YES" && (hideRadio.indexOf('Duration', 0) == -1 && hideRadio.indexOf('How many?', 0) == -1)) {
             $(this).parent().parent().parent().next().show();
+        } else if ($(this).next().html() === "NO" && (hideRadio.indexOf('Duration', 0) != -1 || hideRadio.indexOf('How many?', 0) != -1)) {
+            $(this).parent().parent().parent().next().hide();
+            $(this).parent().parent().parent().next().next().hide();
+            $(this).parent().parent().parent().next().next().next().hide();
+        } else if ($(this).next().html() === "YES" && (hideRadio.indexOf('Duration', 0) != -1 || hideRadio.indexOf('How many?', 0) != -1)) {
+            $(this).parent().parent().parent().next().show();
+            $(this).parent().parent().parent().next().next().show();
+            $(this).parent().parent().parent().next().next().next().show();
         }
     });
 
@@ -86,6 +99,40 @@
                 ]);
 
                 sgusChkb([
+                    "depressed-chkb",
+                    "excessive-chkb",
+                    "unreasonable-chkb",
+                    "lost-chkb",
+                    "racing-chkb",
+                    "fear-chkb",
+                    "not-chkb",
+                    "easily-chkb",
+                    "repetitive-chkb",
+                    "too-chkb",
+                    "over-chkb",
+                    "upsetting-chkb",
+                    "sluggish-chkb",
+                    "impulsive-chkb",
+                    "recent-chkb",
+                    "agitated-chkb",
+                    "see-chkb",
+                    "work-chkb",
+                    "never-chkb",
+                    "suspect-chkb",
+                    "violent-chkb",
+                    "cannot-chkb",
+                    "tense-chkb",
+                    "self-chkb",
+                    "afraid-chkb",
+                    "worry-chkb",
+                    "anger-chkb",
+                    "inflated-chkb",
+                    "panic-chkb",
+                    "careless-chkb",
+                    "feel-chkb",
+                    "thoughts-chkb",
+                    "financial-chkb"
+                ], [
                     "depressed-chkb",
                     "excessive-chkb",
                     "unreasonable-chkb",
@@ -234,7 +281,8 @@
                     "18-inp",
                     "23-inp",
                     "26-inp",
-                    "27-inp"
+                    "27-inp",
+                    "7-inp"
                 ]);
 
                 sgusChkb([
@@ -247,7 +295,21 @@
                     "7-chkb",
                     "8-chkb",
                     "9-chkb",
-                    "10-chkb",
+                    "10-chkb"
+                ], [
+                    "1-chkb",
+                    "2-chkb",
+                    "3-chkb",
+                    "4-chkb",
+                    "5-chkb",
+                    "6-chkb",
+                    "7-chkb",
+                    "8-chkb",
+                    "9-chkb",
+                    "10-chkb"
+                ]);
+
+                sgusChkb([
                     "11-chkb",
                     "12-chkb",
                     "13-chkb",
@@ -326,10 +388,12 @@
                     "6-inp",
                     "7-inp",
                     "8-inp"
-                ], true);
+                ]);
 
                 sgusChkb([
                     "1-chkb"
+                ], [
+
                 ]);
 
                 break;
@@ -399,7 +463,14 @@
                     let thisEl = $("#" + el);
                     if (unrequired.includes(el))
                         return;
-                    if (thisEl.val().length === 0) {
+                    if (
+                        thisEl.val().length === 0 &&
+                        (
+                            thisEl.parent().prev().find("input:radio:checked").next().text() != "NO" &&
+                            thisEl.parent().prev().prev().find("input:radio:checked").next().text() != "NO" &&
+                            thisEl.parent().prev().prev().prev().find("input:radio:checked").next().text() != "NO"
+                        )
+                    ) {
                         thisEl.addClass("error-red");
                     } else {
                         thisEl.removeClass("error-red");
@@ -416,7 +487,9 @@
                     return;
                 let thisEl = $("#" + el);
                 if (thisEl.length) {
-                    if (thisEl.val().replace(/\s/g, '').length === 0 && thisEl.parent().prev().find("input:radio:checked").next().text() != "NO") {
+                    if (thisEl.val().replace(/\s/g, '').length === 0 &&
+                        thisEl.parent().prev().find("input:radio:checked").next().text() != "NO"
+                    ) {
                         thisEl.addClass("error-red");
                     } else {
                         thisEl.removeClass("error-red");
